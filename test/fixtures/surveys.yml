@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  date: MyString
+  kind_of_oil: false
+  grill_plate: false
+  chicken_fat: false
+  grease_trap_service: MyString
+  outdoor_electricity: false
+  install_electicity_outside: false
+  present_equip: MyString
+  number_of_fryers: 1
+  capac_of_fryer: 1
+  freq_of_disposal: 1
+  suggested_equip: MyString
+  location: MyString
+  location_map: MyString
+  desired_location: MyString
+  desired_map: MyString
+  integrated_solution: false
+  organic_pu: false
+  comments_equip: MyText
+  comments_recupe: MyText
+  customer_id: 1
+  user_id: 1
+
+two:
+  date: MyString
+  kind_of_oil: false
+  grill_plate: false
+  chicken_fat: false
+  grease_trap_service: MyString
+  outdoor_electricity: false
+  install_electicity_outside: false
+  present_equip: MyString
+  number_of_fryers: 1
+  capac_of_fryer: 1
+  freq_of_disposal: 1
+  suggested_equip: MyString
+  location: MyString
+  location_map: MyString
+  desired_location: MyString
+  desired_map: MyString
+  integrated_solution: false
+  organic_pu: false
+  comments_equip: MyText
+  comments_recupe: MyText
+  customer_id: 1
+  user_id: 1
