@@ -6,6 +6,7 @@ gem 'omniauth-twitter'
 gem "paperclip"
 gem 'aws-sdk'
 gem 'formtastic'
+gem 'formtastic-bootstrap'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

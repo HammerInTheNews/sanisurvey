@@ -1,0 +1,43 @@
+<%= semantic_form_for @survey do |f| %>
+    <%= f.inputs "Basic Info", :id => "basic" do %>
+      <%= f.input :date %>
+
+    <% end %>
+
+    <%= f.inputs "Questions", :id => "questions" do %>
+      <%= f.input :kind_of_oil, :label => "Which kind of oil is used? (Vegetable or Shortening)", :as => :radio, :collection => ["Vegetable Oil", "Shortening"]  %>
+      <%= f.input :grill_plate, :label => "Do you dump your leftovers in the container?", :as => :radio, :collection => ["Yes", "No"]  %>
+      <%= f.input :chicken_fat, :label => "Do you dump your chicken fat in the container", :as => :radio, :collection => ["Yes", "No"] %>
+      <%= f.input :grease_trap_service, :label => "Do you use a grease trap emptying service", :as => :radio, :collection => ["Yes", "No"] %>
+      <%= f.input :outdoor_electricity, :label => "Do you have an electrical outlet outside (Dedicated, GFI & min.15A)", :as => :radio, :collection => ["Yes", "No"] %>
+      <%= f.input :install_electicity_outside, :label => "If not, would you be willing to install one?", :as => :radio, :collection => ["Yes", "No"] %>
+      <%= f.input :present_equip, :label => "Equipment type currently used", :as => :select, :collection => ["Barrel", "Onken", "Other"] %>
+      <%= f.input :number_of_fryers, :label => "Number of fryers used" %>
+      <%= f.input :capac_of_fryer, :label => "Capacity of each fryer (kgs)" %>
+      <%= f.input :freq_of_disposal, :label => "How often do you change the fryers (days)" %>
+      <%= f.input :suggested_equip, :label => "What equipment do you suggest?" %>
+      <% end %>
+
+    <%= f.inputs "Current Location of the equipment for cooking oil recovery", :id => "equipment_images" do %>
+      <%= f.input :location, :label => "Schematic drawing of area" %>
+      <%= f.input :location_map, :label => "Google map screenshot" %>
+ 
+    <% end %>
+
+    <%= f.inputs "Desired Location of the equipment for cooking oil recovery", :id => "equipment_images_desired" do %>
+      <%= f.input :desired_location, :label => "Schematic drawing of area or google map screenshot" %>
+      <%= f.input :desired_map, :label => "Schematic drawing of area or google map screenshot" %>
+    <% end %>
+
+    <%= f.inputs "Final questions", :id => "final_questions" do %>
+      <%= f.input :integrated_solution, :label => "Would you be interested in an integrated solution for your cooking oil recovery?", :as => :radio, :collection => ["Yes", "No"] %>
+      <%= f.input :organic_pu, :label => "Would you be interested in an organic waste collection service?", :as => :radio, :collection => ["Yes", "No"] %>
+      <%= f.input :comments_equip, :label => "Equipment comments" %>
+      <%= f.input :comments_recupe, :label => "Recuperation" %>
+    <% end %>
+
+    <%= f.actions do %>
+      <%= f.action :submit, :as => :button %>
+      <%= f.action :cancel, :as => :link %>
+    <% end %>
+<% end %>

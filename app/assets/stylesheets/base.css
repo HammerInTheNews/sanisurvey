@@ -1,0 +1,4 @@
+ .radio label input[type="radio"],  .checkbox label input[type="checkbox"] {
+    float: left;
+ 	margin-left: none;
+}
