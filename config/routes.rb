@@ -1,5 +1,5 @@
 Sanisurvey::Application.routes.draw do
-
+root to: 'surveys#index'
   resources :surveys
   resources :users
   resources :customers
