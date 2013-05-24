@@ -7,6 +7,7 @@ gem "paperclip"
 gem 'aws-sdk'
 gem 'formtastic'
 gem 'formtastic-bootstrap'
+gem 'devise'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

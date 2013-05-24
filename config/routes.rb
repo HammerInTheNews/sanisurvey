@@ -1,4 +1,6 @@
 Sanisurvey::Application.routes.draw do
+  devise_for :admins
+
 root to: 'surveys#index'
   resources :surveys
   resources :users
