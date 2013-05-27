@@ -8,8 +8,7 @@ class CustomersController < ApplicationController
     end
 
     def import
-    	#params[:file] is temp file storage
       Customer.import(params[:file])
-      redirect_to root_url, notice: "Products"
+      redirect_to root_url, notice: "Customers"
     end
 end
