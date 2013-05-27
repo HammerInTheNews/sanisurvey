@@ -1,0 +1,35 @@
+<h1>Customers</h2>
+
+<table id="customers">
+  <tr>
+  	<th>Customer Number</th>
+   	<th>Restaurant Name</th>
+  	<th>Street Address</th>
+  	<th>City</th>
+  	<th>Postal Code</th>
+  	<th>Province</th>
+  	<th>Phone</th>
+  	<th>Email</th>
+  	<th>Contact Name</th>
+  </tr>
+
+<%= @customers.each do |customer| %>
+  <tr>
+  	<td><%= customer.customer_number %></td>
+   	<td><%= customer.restaurant_name %></td>
+  	<td><%= customer.street_address %></td>
+  	<td><%= customer.city %></td>
+  	<td><%= customer.postal_code %></td>
+  	<td><%= customer.province %></td>
+  	<td><%= customer.phone %></td>
+  	<td><%= customer.email %></td>
+  	<td><%= customer.contact_name %></td>
+  </tr>
+<% end %>  
+</table>
+
+<%= form_tag import_customer_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <% submit_tag "import" %>
+<% end %>
+

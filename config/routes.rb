@@ -1,10 +1,11 @@
 Sanisurvey::Application.routes.draw do
-  devise_for :admins
-
 root to: 'surveys#index'
   resources :surveys
   resources :users
-  resources :customers
+  resources :customers do
+    collection { post :import}
+  end  
+  root to: 'customers#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
