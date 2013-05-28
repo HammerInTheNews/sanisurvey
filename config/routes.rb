@@ -3,7 +3,7 @@ root to: 'surveys#index'
   resources :surveys
   resources :users
   resources :customers do
-    collection { post :import}
+    collection { post :import }
   end  
   root to: 'customers#index'
   # The priority is based upon order of creation:

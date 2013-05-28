@@ -1,6 +1,11 @@
 class CustomersController < ApplicationController
 	def index
-		@customers = Customer.all
+		@customers = Customer.order(:customer_number)
+    respond_to do |format|
+    format.html
+    format.csv { send_data @customers.to_csv }
+    #format.xls #{ send_data @customers.to_csv(col_sep: "\t") }
+    end  
 	end
 
 	def new
