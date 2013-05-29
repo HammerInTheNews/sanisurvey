@@ -1,5 +1,5 @@
 class Customer < ActiveRecord::Base
-  attr_accessible :contact_name, :customer_number, :email, :phone, :postal_code, :province, :restaurant_name, :street_address
+  attr_accessible :contact_name, :customer_number, :email, :phone, :postal_code, :province, :restaurant_name, :street_address, :city
   has_many :surveys
 
   def self.to_csv(options = {})

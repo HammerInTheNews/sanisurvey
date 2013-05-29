@@ -30,6 +30,6 @@
 
 <%= form_tag import_customers_path, multipart: true do %>
   <%= file_field_tag :file %>
-  <% submit_tag "import" %>
+  <%= submit_tag "Import" %>
 <% end %>
 
