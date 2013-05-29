@@ -1,25 +1,58 @@
+<table class="table table-striped" id="surveys">
+
+  <tr>
+    <th>Date</th>
+    <th>Oil Type</th>
+    <th>Collect Grill Scrapings?</th>
+    <th>Collect Grill Fat?</th>
+    <th>Grease Trap Service</th>
+    <th>Outdoor Elec?</th>
+    <th>Want Outdoor Elec?</th>
+    <th>Present Equip?</th>
+    <th># of Fryers</th>
+    <th>Fryer Capac (kgs)</th>
+    <th>Frq Disposal (in days)</th>
+    <th>Suggested Equip</th>
+    <th>Location image</th>
+    <th>Google Map Location</th>
+    <th>desired Location image</th>
+    <th>desired Location map </th>
+    <th>Want integrated solution?</th>
+    <th>Want organic p/u?</th>
+    <th>Comments on Equipment</th>
+    <th>Comments on recuperation</th>
+    <th>Customer Id</th>
+    <th>Admin_id</th>
+    <th>Created_at </th> 
+  </tr>  
+
 <% @surveys.each do |p| %>
-  <%= p.date %>
-  <%= p.kind_of_oil %>
-  <%= p.grill_plate %>
-  <%= p.chicken_fat %>
-  <%= p.grease_trap_service %>
-  <%= p.outdoor_electricity %>
-  <%= p.install_electicity_outside %>
-  <%= p.present_equip %>
-  <%= p.number_of_fryers %>
-  <%= p.capac_of_fryer %>
-  <%= p.freq_of_disposal %>
-  <%= p.suggested_equip %>
-  <%= p.location %>
-  <%= p.location_map %>
-  <%= p.desired_location %>
-  <%= p.desired_map %>
-  <%= p.integrated_solution %>
-  <%= p.organic_pu %>
-  <%= p.comments_equip %>
-  <%= p.comments_recupe %>
-  <%= p.customer_id %>
-  <%= p.user_id %>
-  <%= p.created_at %>            
+  <tr>
+    <td><%= p.date %></td>
+    <td><%= p.kind_of_oil %></td>
+    <td><%= p.grill_plate %></td>
+    <td><%= p.chicken_fat %></td>
+    <td><%= p.grease_trap_service %></td>
+    <td><%= p.outdoor_electricity %></td>
+    <td><%= p.install_electicity_outside %></td>
+    <td><%= p.present_equip %></td>
+    <td><%= p.number_of_fryers %></td>
+    <td><%= p.capac_of_fryer %></td>
+    <td><%= p.freq_of_disposal %></td>
+    <td><%= p.suggested_equip %></td>
+    <td><%= p.location %></td>
+    <td><%= p.location_map %></td>
+    <td><%= p.desired_location %></td>
+    <td><%= p.desired_map %></td>
+    <td><%= p.integrated_solution %></td>
+    <td><%= p.organic_pu %></td>
+    <td><%= p.comments_equip %></td>
+    <td><%= p.comments_recupe %></td>
+    <td><%= p.customer_id %></td>
+    <td><%= p.user_id %></td>
+    <td><%= p.created_at %></td> 
+  </tr>           
+
 <% end %>
+
+</table>
