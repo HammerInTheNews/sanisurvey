@@ -6,6 +6,9 @@ root to: 'surveys#index'
     collection { post :import }
   end  
   root to: 'customers#index'
+  
+  devise_for :admins
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
