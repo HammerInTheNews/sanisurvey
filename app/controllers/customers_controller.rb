@@ -14,6 +14,6 @@ class CustomersController < ApplicationController
 
     def import
       Customer.import(params[:file])
-      redirect_to root_url, notice: "Customers"
+      redirect_to customers_path, notice: "Customers"
     end
 end
