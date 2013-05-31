@@ -9,16 +9,36 @@
 	  <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" />
 </head>
-<body>
-<% if admin_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_admin_session_path, :method => :delete) %>        
-  </li>
-<% else %>
-  <li>
-  <%= link_to('Login', new_admin_session_path)  %>  
-  </li>
-<% end %>
+<body class="body">
+	<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                    </button><a class="brand" href="#">Project name</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li class="active"><a href="#">Home</a>
+                            </li>
+                            <li><a href="#about">About</a>
+                            </li>
+                            <li>                          	
+                            	<% if admin_signed_in? %>
+									  
+									  	<%= link_to('Logout', destroy_admin_session_path, :method => :delete) %>        
+									  
+									<% else %>
+								  		
+								 		 <%= link_to('Login', new_admin_session_path)  %>  
+								  		
+								<% end %>
+								
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 <%= yield %>
 
 </body>
