@@ -1,7 +1,7 @@
 <table class="table table-striped" id="surveys">
 
   <tr>
-    <th>Date</th>
+    <th>Created_at </th>
     <th>Oil Type</th>
     <th>Collect Grill Scrapings?</th>
     <th>Collect Grill Fat?</th>
@@ -23,12 +23,11 @@
     <th>Comments on recuperation</th>
     <th>Customer Id</th>
     <th>Admin_id</th>
-    <th>Created_at </th> 
   </tr>  
 
 <% @surveys.each do |p| %>
   <tr>
-    <td><%= p.date %></td>
+    <td><%= p.created_at %></td> 
     <td><%= p.kind_of_oil %></td>
     <td><%= p.grill_plate %></td>
     <td><%= p.chicken_fat %></td>
@@ -50,7 +49,10 @@
     <td><%= p.comments_recupe %></td>
     <td><%= p.customer_id %></td>
     <td><%= p.user_id %></td>
-    <td><%= p.created_at %></td> 
+    <!-- <td><%#= link_to 'Show', survey %></td> -->
+<!--     <td><%#= link_to 'Edit', edit_survey_path(survey) %></td>
+    <td><%#= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+
   </tr>           
 
 <% end %>

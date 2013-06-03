@@ -20,7 +20,7 @@ class SurveysController < ApplicationController
 	end
 
 	def show
-		Survey.find(params[:id])
+		@survey = Survey.find(params[:id])
 	end
 
 	def edit

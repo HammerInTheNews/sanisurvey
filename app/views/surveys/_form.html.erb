@@ -1,8 +1,5 @@
 <%= semantic_form_for @survey do |f| %>
-    <%= f.inputs "Basic Info", :id => "basic" do %>
-      <%= f.input :date, :as => :date_select %>
 
-    <% end %>
 
     <%= f.inputs "Questions", :id => "questions" do %>
       <%= f.input :kind_of_oil, :label => "Which kind of oil is used? (Vegetable or Shortening)", :as => :radio, :collection => ["Vegetable Oil", "Shortening"]  %>

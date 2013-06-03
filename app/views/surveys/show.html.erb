@@ -1,0 +1,108 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Date</b>
+  <%= @survey. %>
+</p>
+
+<p>
+  <b>What type of oil is it?</b>
+  <%= @survey.kind_of_oil %>
+</p>
+
+<p>
+  <b>Do you collect leftovers from the grill plate?</b>
+  <%= @survey.grill_plate %>
+</p>
+
+<p>
+  <b>Do you collect the chicken fat?</b>
+  <%= @survey.chicken_fat %>
+</p>
+
+<p>
+  <b>Do you currently have a grease trap service?</b>
+  <%= @survey.grease_trap_service %>
+</p>
+
+<p>
+  <b>Do you have access to outdoor electricity?</b>
+  <%= @survey.outdoor_electricity %>
+</p>
+
+<p>
+  <b>If not, would you be willing to install some?</b>
+  <%= @survey.install_electicity_outside %>
+</p>
+
+<p>
+  <b>What kind of equipment do you have currently?</b>
+  <%= @survey.present_equip %>
+</p>
+
+<p>
+  <b>How many fryers do you have?</b>
+  <%= @survey.number_of_fryers %>
+</p>
+
+<p>
+  <b>What is the capacity of each fryer (kgs) ?</b>
+  <%= @survey.capac_of_fryer %>
+</p>
+
+<p>
+  <b>How often do you dispose your grease (in days)</b>
+  <%= @survey.freq_of_disposal %>
+</p>
+
+<p>
+  <b>What equipment do you suggest?</b>
+  <%= @survey.suggested_equip %>
+</p>
+
+<p>
+  <b>Current location of equipment (image)</b>
+  <%= @survey.location %>
+</p>
+
+<p>
+  <b>Map Screenshot</b>
+  <%= @survey.location_map %>
+</p>
+
+<p>
+  <b>Desired location of equipment (image)</b>
+  <%= @survey.desired_location %>
+</p>
+
+<p>
+  <b>Desired spot on map screenshot</b>
+  <%= @survey._desired_map %>
+</p>
+
+<p>
+  <b>Are you interested in an integrated solution?</b>
+  <%= @survey.integrated_solution %>
+</p>
+
+<p>
+  <b>Are you interested in organic pick up?</b>
+  <%= @survey.organic_pu %>
+</p>
+
+<p>
+  <b>Comments on Equipment?</b>
+  <%= @survey.comments_equip %>
+</p>
+
+<p>
+  <b>Comments on recuperation?</b>
+  <%= @survey.comments_recupe %>
+</p>
+
+
+<%= link_to 'Edit', edit_survey_path(@survey) %> |
+<%= link_to 'Back', surveys_path %>
+
+
+   
