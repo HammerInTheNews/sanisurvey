@@ -1,4 +1,4 @@
-<%= semantic_form_for @survey do |f| %>
+<%= semantic_form_for @survey, html: {multipart: true} do |f| %>
 
 
     <%= f.inputs "Questions", :id => "questions" do %>
@@ -16,7 +16,7 @@
       <% end %>
 
     <%= f.inputs "Current Location of the equipment for cooking oil recovery", :id => "equipment_images" do %>
-      <%= f.input :location, :label => "Schematic drawing of area" %>
+      <%= f.file_field :image => "Picture of area" %>
       <%= f.input :location_map, :label => "Google map screenshot" %>
  
     <% end %>
