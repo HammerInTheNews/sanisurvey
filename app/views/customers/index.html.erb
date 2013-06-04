@@ -26,7 +26,7 @@
 
 <% @customers.each do |customer| %>
   <tr>
-    <td><%= link_to "Survey",[@customer, :surveys] %></td>
+    <td><%= link_to "Survey", edit_survey_path(customer.surveys.first.id) if customer.surveys.first %></td>
   	<td><%= customer.customer_number %></td>
    	<td><%= customer.restaurant_name %></td>
   	<td><%= customer.street_address %></td>

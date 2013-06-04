@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130524192104) do
+ActiveRecord::Schema.define(:version => 20130604003413) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(:version => 20130524192104) do
 
   create_table "surveys", :force => true do |t|
     t.string   "date"
-    t.boolean  "kind_of_oil"
+    t.string   "kind_of_oil"
     t.boolean  "grill_plate"
     t.boolean  "chicken_fat"
     t.string   "grease_trap_service"
