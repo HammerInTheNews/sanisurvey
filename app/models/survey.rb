@@ -8,4 +8,14 @@ class Survey < ActiveRecord::Base
     :storage => :s3, s3_credentials: {access_key_id: "AKIAJQFILE7GM3P4IOUA",
     secret_access_key: "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",
     bucket: "surveymax"} 
+
+  def self.to_csv(options = {})
+  	CSV.generate(options) do |csv|
+  		csv << column_names
+  		all.each do |survey|
+  			csv << survey.attributes.values_at(*column_names)
+  		end
+  	end
+  end		
+
 end

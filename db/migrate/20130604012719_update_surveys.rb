@@ -4,8 +4,6 @@ class UpdateSurveys < ActiveRecord::Migration
   	#add changes to columns here
   	change_column :surveys, :grill_plate, :string
   	change_column :surveys, :chicken_fat, :string
-
-
   	change_column :surveys, :outdoor_electricity, :string
   	change_column :surveys, :install_electicity_outside, :string
   	change_column :surveys, :integrated_solution, :string

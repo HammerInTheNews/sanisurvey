@@ -1,7 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 #use rails builtin library
 require 'csv'
-require 'iconv'
+# require 'iconv'
 require 'rails/all'
 require 'roo'
 

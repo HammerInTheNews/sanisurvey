@@ -1,7 +1,11 @@
 class SurveysController < ApplicationController
-
 	def index
-		@surveys = Survey.all
+		@surveys = Survey.order(:id)
+	    respond_to do |format|
+	    format.html
+	    format.csv { send_data @surveys.to_csv }
+	    format.xls { send_data @surveys.to_csv(col_sep: "\t") }
+	    end  
 	end
 
 	def new
@@ -10,8 +14,10 @@ class SurveysController < ApplicationController
   
     def create
     @survey = Survey.new(params[:survey])
+	
+	  respond_to do |format|    
 	    if @survey.save
-	      	format.html { redirect_to @surveys_path, notice: 'survey was successfully updated.' }
+	      	format.html { redirect_to surveys_path, notice: 'survey was successfully updated.' }
 	        format.json { head :no_content } 
 	    else
 	      # This line overrides the default rendering behavior, which
@@ -19,6 +25,7 @@ class SurveysController < ApplicationController
 	       format.html { render action: "new" }
 	       format.json { render json: @survey.errors, status: :unprocessable_entity }
 	    end
+	  end
 	end
 
 	def show
