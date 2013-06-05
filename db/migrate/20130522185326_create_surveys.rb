@@ -14,6 +14,11 @@ class CreateSurveys < ActiveRecord::Migration
       t.integer :freq_of_disposal
       t.string :suggested_equip
       t.string :location
+      t.string   :image_file_name
+      t.string   :image_content_type
+      t.integer  :image_file_size
+      t.datetime :image_updated_at
+      t.string   :image
       t.string :location_map
       t.string :desired_location
       t.string :desired_map

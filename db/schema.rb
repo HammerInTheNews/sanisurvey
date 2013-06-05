@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130604012719) do
+ActiveRecord::Schema.define(:version => 20130605221547) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -48,11 +48,11 @@ ActiveRecord::Schema.define(:version => 20130604012719) do
   create_table "surveys", :force => true do |t|
     t.string   "date"
     t.string   "kind_of_oil"
-    t.boolean  "grill_plate"
-    t.boolean  "chicken_fat"
+    t.string   "grill_plate"
+    t.string   "chicken_fat"
     t.string   "grease_trap_service"
-    t.boolean  "outdoor_electricity"
-    t.boolean  "install_electicity_outside"
+    t.string   "outdoor_electricity"
+    t.string   "install_electicity_outside"
     t.string   "present_equip"
     t.integer  "number_of_fryers"
     t.integer  "capac_of_fryer"
@@ -62,14 +62,15 @@ ActiveRecord::Schema.define(:version => 20130604012719) do
     t.string   "location_map"
     t.string   "desired_location"
     t.string   "desired_map"
-    t.boolean  "integrated_solution"
-    t.boolean  "organic_pu"
+    t.string   "integrated_solution"
+    t.string   "organic_pu"
     t.text     "comments_equip"
     t.text     "comments_recupe"
     t.integer  "customer_id"
     t.integer  "user_id"
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
+    t.string   "image"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"

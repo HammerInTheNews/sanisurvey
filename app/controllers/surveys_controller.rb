@@ -49,4 +49,13 @@ class SurveysController < ApplicationController
 	      end
 	    end
 	end
+    def destroy
+	    @survey = Survey.find(params[:id])
+	    @survey.destroy
+
+	    respond_to do |format|
+	      format.html { redirect_to survey_url }
+	      format.json { head :no_content }
+    end
+  end	
 end
