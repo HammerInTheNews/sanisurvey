@@ -8,6 +8,7 @@
 
 
 <table class="table table-striped table-condensed" id="customers">
+ <thead> 
   <tr>
     <th>Survey</th>
   	<th>Customer Number</th>
@@ -23,24 +24,26 @@
     <th>Edit</th>
     <th>Delete</th>
   </tr>
-
-<% @customers.each do |customer| %>
-  <tr>
-    <td><%= link_to "Survey", edit_survey_path(customer.surveys.first.id) if customer.surveys.first %></td>
-  	<td><%= customer.customer_number %></td>
-   	<td><%= customer.restaurant_name %></td>
-  	<td><%= customer.street_address %></td>
-  	<td><%= customer.city %></td>
-  	<td><%= customer.postal_code %></td>
-  	<td><%= customer.province %></td>
-  	<td><%= customer.phone %></td>
-  	<td><%= customer.email %></td>
-  	<td><%= customer.contact_name %></td>
-    <td><%= link_to 'Show', customer %></td>
-    <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-    <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>  
+ </thead>
+ <tbody>
+  <% @customers.each do |customer| %>
+    <tr>
+      <td><%= link_to "Survey", edit_survey_path(customer.surveys.first.id) if customer.surveys.first %></td>
+    	<td><%= customer.customer_number %></td>
+     	<td><%= customer.restaurant_name %></td>
+    	<td><%= customer.street_address %></td>
+    	<td><%= customer.city %></td>
+    	<td><%= customer.postal_code %></td>
+    	<td><%= customer.province %></td>
+    	<td><%= customer.phone %></td>
+    	<td><%= customer.email %></td>
+    	<td><%= customer.contact_name %></td>
+      <td><%= link_to 'Show', customer %></td>
+      <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+      <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</tbody>  
 </table>
 
 <%= form_tag import_customers_path, multipart: true do %>

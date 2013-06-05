@@ -10,5 +10,6 @@
  *# app/assets/stylesheets/application.css
 *= require formtastic-bootstrap
  *= require_self
+ *= require dataTables/jquery.dataTables
  *= require_tree .
  */
