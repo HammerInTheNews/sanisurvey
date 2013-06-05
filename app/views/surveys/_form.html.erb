@@ -16,7 +16,7 @@
       <% end %>
 
     <%= f.inputs "Current Location of the equipment for cooking oil recovery", :id => "equipment_images" do %>
-      <%= f.file_field :image => "Picture of area" %>
+      <%= f.input :image, :as => :file, :label => "Picture of area" %>
       <%= f.input :location_map, :label => "Google map screenshot" %>
  
     <% end %>

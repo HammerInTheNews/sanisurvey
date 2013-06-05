@@ -11,11 +11,13 @@ class SurveysController < ApplicationController
     def create
     @survey = Survey.new(params[:survey])
 	    if @survey.save
-	      redirect_to surveys_path
+	      	format.html { redirect_to @surveys_path, notice: 'survey was successfully updated.' }
+	        format.json { head :no_content } 
 	    else
 	      # This line overrides the default rendering behavior, which
 	      # would have been to render the "create" view.
-	      render :action => "new"
+	       format.html { render action: "new" }
+	       format.json { render json: @survey.errors, status: :unprocessable_entity }
 	    end
 	end
 

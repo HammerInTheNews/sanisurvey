@@ -23,6 +23,9 @@
     <th>Comments on recuperation</th>
     <th>Customer Id</th>
     <th>Admin_id</th>
+    <th>Details</th>
+    <th>Edit</th>
+    <th>Delete</th>
   </tr>  
 
 <% @surveys.each do |p| %>
@@ -49,9 +52,9 @@
     <td><%= p.comments_recupe %></td>
     <td><%= p.customer_id %></td>
     <td><%= p.user_id %></td>
-    <!-- <td><%#= link_to 'Show', survey %></td> -->
-<!--     <td><%#= link_to 'Edit', edit_survey_path(survey) %></td>
-    <td><%#= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+    <td><%= link_to 'Show', p %></td>
+    <td><%= link_to 'Edit', edit_survey_path(p) %></td>
+    <td><%= link_to 'Destroy', p, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
   </tr>           
 
