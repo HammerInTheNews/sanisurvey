@@ -30,8 +30,9 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
   gem 'jquery-datatables-rails'
-end
 
+end
+  gem 'jquery-ui-rails'
 gem 'jquery-rails'
 gem 'roo'
 
@@ -49,3 +50,4 @@ gem 'roo'
 
 # To use debugger
 # gem 'debugger'
+gem "will_paginate"
