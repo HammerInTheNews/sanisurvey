@@ -7,7 +7,7 @@
 <table class="display" id="customers">
  <thead>
   <tr>
-    <th>Created_at </th>
+    <th>Customer Decision</th>
     <th>Oil Type</th>
     <th>Collect Grill Scrapings?</th>
     <th>Collect Grill Fat?</th>
@@ -20,7 +20,6 @@
     <th>Frq Disposal (in days)</th>
     <th>Suggested Equip</th>
     <th>Location image</th>
-    <th>Google Map Location</th>
     <th>desired Location image</th>
     <th>desired Location map </th>
     <th>Want integrated solution?</th>
@@ -37,7 +36,7 @@
 <tbody>
 <% @surveys.each do |p| %>
   <tr>
-    <td><%= p.created_at %></td> 
+    <td><%= p.location_map %></td>
     <td><%= p.kind_of_oil %></td>
     <td><%= p.grill_plate %></td>
     <td><%= p.chicken_fat %></td>
@@ -50,9 +49,8 @@
     <td><%= p.freq_of_disposal %></td>
     <td><%= p.suggested_equip %></td>
     <td><%= image_tag p.image.url(:thumb) %></td>
-    <td><%= p.location_map %></td>
     <td><%= p.desired_location %></td>
-    <td><%= p.desired_map %></td>
+    <td><%= image_tag p.image.url(:thumb) %></td>
     <td><%= p.integrated_solution %></td>
     <td><%= p.organic_pu %></td>
     <td><%= p.comments_equip %></td>

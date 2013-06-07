@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+
 <p>
-  <b>Date</b>
-  <%= @survey.created_at %>
+  <b>Customer</b>
+  <%= @survey.location_map %>
 </p>
 
 <p>
@@ -66,13 +67,8 @@
 </p>
 
 <p>
-  <b>Map Screenshot</b>
-  <%= @survey.location_map %>
-</p>
-
-<p>
   <b>Desired location of equipment (image)</b>
-  <%= @survey.desired_location %>
+  <%= image_tag @survey.image %>
 </p>
 
 <p>
