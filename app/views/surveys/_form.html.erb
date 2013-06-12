@@ -9,11 +9,11 @@
       <%= f.input :grease_trap_service, :label => "Do you use a grease trap emptying service", :as => :radio, :collection => ["Yes", "No"] %>
       <%= f.input :outdoor_electricity, :label => "Do you have an electrical outlet outside (Dedicated, GFI & min.15A)", :as => :radio, :collection => ["Yes", "No"] %>
       <%= f.input :install_electicity_outside, :label => "If not, would you be willing to install one?", :as => :radio, :collection => ["Yes", "No"] %>
-      <%= f.input :present_equip, :label => "Equipment type currently used", :as => :select, :collection => ["Small tank", "Med tank","Lrg tank", "Small heated tank ", "Med heated tank","Lrg heated tank"] %>
+      <%= f.input :present_equip, :label => "Equipment type currently used", :as => :select, :collection => ["Barrel", "Onken", "Heated Tank", "Sanicart", "Underground Tank", "Other"] %>
       <%= f.input :number_of_fryers, :label => "Number of fryers used" %>
       <%= f.input :capac_of_fryer, :label => "Capacity of each fryer (kgs)" %>
       <%= f.input :freq_of_disposal, :label => "How often do you change the fryers (days)" %>
-      <%= f.input :suggested_equip, :label => "What equipment do you suggest?" %>
+      <%= f.input :suggested_equip, :label => "What equipment do you suggest?", :as => :select, :collection => ["Small tank", "Med tank","Lrg tank", "Small heated tank ", "Med heated tank","Lrg heated tank"] %>
       <% end %>
 
     <%= f.inputs "Current Location of the equipment for cooking oil recovery", :id => "equipment_images" do %>
