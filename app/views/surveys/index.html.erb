@@ -41,10 +41,11 @@
 <% @surveys.each do |p| %>
   <tr>
     <td><%= p.inspect %><br /><br /><br /><%= p.customer.inspect %><br /><br /><br /><% p.customer.customer_number.inspect %></td>
-    <td><%= p.customer.customer_number %></td>
-    <td><%= p.customer.restaurant_name %></td>
-    <td><%= p.customer.street_address %></td>
-    <td><%= p.customer.city %></td>
+    <td><%= p.customer.customer_number if p.customer %></td>
+<td><%= p.customer.restaurant_name if p.customer %></td>
+<td><%= p.customer.street_address if p.customer %></td>
+<td><%= p.customer.city if p.customer %></td>
+
     <td><%= p.location_map %></td>
     <td><%= p.kind_of_oil %></td>
     <td><%= p.grill_plate %></td>
