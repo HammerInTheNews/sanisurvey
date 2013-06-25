@@ -7,6 +7,7 @@
 <table class="display" id="customers">
  <thead>
   <tr>
+    <th>Customer Number</th>
     <th>Customer Decision</th>
     <th>Oil Type</th>
     <th>Collect Grill Scrapings?</th>
@@ -36,6 +37,7 @@
 <tbody>
 <% @surveys.each do |p| %>
   <tr>
+    <td><%= p.customer.customer_number %></td>
     <td><%= p.location_map %></td>
     <td><%= p.kind_of_oil %></td>
     <td><%= p.grill_plate %></td>
