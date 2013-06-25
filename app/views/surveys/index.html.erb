@@ -8,6 +8,9 @@
  <thead>
   <tr>
     <th>Customer Number</th>
+    <th>Customer Name</th>
+    <th>Customer Address</th>
+    <th>Customer City</th>
     <th>Customer Decision</th>
     <th>Oil Type</th>
     <th>Collect Grill Scrapings?</th>
@@ -38,6 +41,9 @@
 <% @surveys.each do |p| %>
   <tr>
     <td><%= p.customer.customer_number %></td>
+    <td><%= p.customer.restaurant_name %></td>
+    <td><%= p.customer.street_address %></td>
+    <td><%= p.customer.city %></td>
     <td><%= p.location_map %></td>
     <td><%= p.kind_of_oil %></td>
     <td><%= p.grill_plate %></td>
