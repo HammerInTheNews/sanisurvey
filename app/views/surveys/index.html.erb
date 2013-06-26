@@ -40,12 +40,15 @@
 <tbody>
 <% @surveys.each do |p| %>
   <tr>
-    <td><%= p.inspect %><br /><br /><br /><%= p.customer.inspect %><br /><br /><br /><% p.customer.customer_number.inspect %></td>
-    <td><%= p.customer.customer_number if p.customer %></td>
-<td><%= p.customer.restaurant_name if p.customer %></td>
-<td><%= p.customer.street_address if p.customer %></td>
-<td><%= p.customer.city if p.customer %></td>
-
+    <% if p.customer %>
+      <td><%= p.inspect %><br /><br /><br /><%= p.customer.inspect %><br /><br /><br /><%= p.customer.customer_number.inspect %></td>
+      <td><%= p.customer.customer_number if p.customer %></td>
+      <td><%= p.customer.restaurant_name if p.customer %></td>
+      <td><%= p.customer.street_address if p.customer %></td>
+      <td><%= p.customer.city if p.customer %></td>
+    <% else %>
+      <td>This survey id: <%= p.id  %> has an invalid customer number.</td>
+    <% end %>
     <td><%= p.location_map %></td>
     <td><%= p.kind_of_oil %></td>
     <td><%= p.grill_plate %></td>
