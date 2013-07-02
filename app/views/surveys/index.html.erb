@@ -3,81 +3,85 @@
   <%= link_to "CSV", surveys_path(format: "csv") %>
   <%= link_to "Excel", surveys_path(format: "xls") %>
 </p>
+<div class="dataTables_wrapper" role="grid">
+  <div class="dataTables_scrollBody" style="width: 100%; overflow: auto;">
+    <table class="display" id="customers">
+     <thead>
+      <tr>
+        <th>Customer Number</th>
+        <th>Customer Name</th>
+        <th>Customer Address</th>
+        <th>Customer City</th>
+        <th>Customer Decision</th>
+        <th>Oil Type</th>
+        <th>Collect Grill Scrapings?</th>
+        <th>Collect Grill Fat?</th>
+        <th>Grease Trap Service</th>
+        <th>Outdoor Elec?</th>
+        <th>Want Outdoor Elec?</th>
+        <th>Present Equip?</th>
+        <th># of Fryers</th>
+        <th>Fryer Capac (kgs)</th>
+        <th>Frq Disposal (in days)</th>
+        <th>Suggested Equip</th>
+        <th>Location image</th>
+        <th>desired Location image</th>
+        <th>desired Location map </th>
+        <th>Want integrated solution?</th>
+        <th>Want organic p/u?</th>
+        <th>Comments on Equipment</th>
+        <th>Comments on recuperation</th>
+        <th>Customer Id</th>
+        <th>Admin_id</th>
+        <th>Details</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>  
+    </thead>
 
-<table class="display" id="customers">
- <thead>
-  <tr>
-    <th>Customer Number</th>
-    <th>Customer Name</th>
-    <th>Customer Address</th>
-    <th>Customer City</th>
-    <th>Customer Decision</th>
-    <th>Oil Type</th>
-    <th>Collect Grill Scrapings?</th>
-    <th>Collect Grill Fat?</th>
-    <th>Grease Trap Service</th>
-    <th>Outdoor Elec?</th>
-    <th>Want Outdoor Elec?</th>
-    <th>Present Equip?</th>
-    <th># of Fryers</th>
-    <th>Fryer Capac (kgs)</th>
-    <th>Frq Disposal (in days)</th>
-    <th>Suggested Equip</th>
-    <th>Location image</th>
-    <th>desired Location image</th>
-    <th>desired Location map </th>
-    <th>Want integrated solution?</th>
-    <th>Want organic p/u?</th>
-    <th>Comments on Equipment</th>
-    <th>Comments on recuperation</th>
-    <th>Customer Id</th>
-    <th>Admin_id</th>
-    <th>Details</th>
-    <th>Edit</th>
-    <th>Delete</th>
-  </tr>  
-</thead>
-<tbody>
-<% @surveys.each do |p| %>
-  <tr>
-    <% if p.customer %>
-      <td><%= p.customer.customer_number if p.customer %></td>
-      <td><%= p.customer.restaurant_name if p.customer %></td>
-      <td><%= p.customer.street_address if p.customer %></td>
-      <td><%= p.customer.city if p.customer %></td>
-    <% else %>
-      <td>This survey id: <%= p.id  %> has an invalid customer number.</td>
-      <td>N/A</td>
-      <td>N/A</td>
-      <td>N/A</td>
+    <tbody>
+    <% @surveys.each do |p| %>
+      <tr>
+        <% if p.customer %>
+          <td><%= p.customer.customer_number if p.customer %></td>
+          <td><%= p.customer.restaurant_name if p.customer %></td>
+          <td><%= p.customer.street_address if p.customer %></td>
+          <td><%= p.customer.city if p.customer %></td>
+        <% else %>
+          <td>This survey id: <%= p.id  %> has an invalid customer number.</td>
+          <td>N/A</td>
+          <td>N/A</td>
+          <td>N/A</td>
+        <% end %>
+        <td><%= p.location_map %></td>
+        <td><%= p.kind_of_oil %></td>
+        <td><%= p.grill_plate %></td>
+        <td><%= p.chicken_fat %></td>
+        <td><%= p.grease_trap_service %></td>
+        <td><%= p.outdoor_electricity %></td>
+        <td><%= p.install_electicity_outside %></td>
+        <td><%= p.present_equip %></td>
+        <td><%= p.number_of_fryers %></td>
+        <td><%= p.capac_of_fryer %></td>
+        <td><%= p.freq_of_disposal %></td>
+        <td><%= p.suggested_equip %></td>
+        <td><%= image_tag p.image.url(:thumb) %></td>
+        <td><%= p.desired_location %></td>
+        <td><%= image_tag p.image.url(:thumb) %></td>
+        <td><%= p.integrated_solution %></td>
+        <td><%= p.organic_pu %></td>
+        <td><%= p.comments_equip %></td>
+        <td><%= p.comments_recupe %></td>
+        <td><%= p.customer_id %></td>
+        <td><%= p.user_id %></td>
+        <td><%= link_to 'Show', p %></td>
+        <td><%= link_to 'Edit', edit_survey_path(p) %></td>
+        <td><%= link_to 'Destroy', p, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+      </tr>           
+
     <% end %>
-    <td><%= p.location_map %></td>
-    <td><%= p.kind_of_oil %></td>
-    <td><%= p.grill_plate %></td>
-    <td><%= p.chicken_fat %></td>
-    <td><%= p.grease_trap_service %></td>
-    <td><%= p.outdoor_electricity %></td>
-    <td><%= p.install_electicity_outside %></td>
-    <td><%= p.present_equip %></td>
-    <td><%= p.number_of_fryers %></td>
-    <td><%= p.capac_of_fryer %></td>
-    <td><%= p.freq_of_disposal %></td>
-    <td><%= p.suggested_equip %></td>
-    <td><%= image_tag p.image.url(:thumb) %></td>
-    <td><%= p.desired_location %></td>
-    <td><%= image_tag p.image.url(:thumb) %></td>
-    <td><%= p.integrated_solution %></td>
-    <td><%= p.organic_pu %></td>
-    <td><%= p.comments_equip %></td>
-    <td><%= p.comments_recupe %></td>
-    <td><%= p.customer_id %></td>
-    <td><%= p.user_id %></td>
-    <td><%= link_to 'Show', p %></td>
-    <td><%= link_to 'Edit', edit_survey_path(p) %></td>
-    <td><%= link_to 'Destroy', p, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
-  </tr>           
-
-<% end %>
-</tbody>
-</table>
+    </tbody>
+    </table>
+  </div>
+</div>

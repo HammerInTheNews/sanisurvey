@@ -12,6 +12,8 @@
  *= require_self
  *= require jquery.ui.core
  *= require jquery.ui.theme
+ *= require dataTables/extras/TableTools
+ *= require dataTables/extras/TableTools_JUI
  *= require dataTables/src/demo_table_jui
  *= require_tree .
  */

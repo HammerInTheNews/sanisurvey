@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require dataTables/jquery.dataTables
+//= require dataTables/extras/ZeroClipboard.js
+//= require dataTables/extras/TableTools
 //= require_tree .

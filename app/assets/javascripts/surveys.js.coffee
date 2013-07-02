@@ -4,7 +4,13 @@
 
 jQuery ->
   $('surveys').dataTable
-    sPaginationType: "full_numbers"
-    bJQueryUI: true
     sScrollX: "100%"
+    sScrollXInner: "110%"
     bScrollCollapse: true
+
+jQuery ->
+  $('surveys').dataTable
+    sDom: "T<\"clear\">lfrtip"
+    oTableTools:
+      sSwfPath: "/swf/copy_csv_xls_pdf.swf"
+    
