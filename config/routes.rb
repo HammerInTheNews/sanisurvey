@@ -5,7 +5,7 @@ root to: 'surveys#index'
   resources :customers do
     collection { post :import }
   end  
-  root to: 'customers#index'
+ # root to: 'customers#index'
   
   devise_for :admins
 

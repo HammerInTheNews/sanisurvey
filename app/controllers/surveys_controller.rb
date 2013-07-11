@@ -1,9 +1,9 @@
 class SurveysController < ApplicationController
 	def index
 		@surveys = Survey.order(:id)
-	    respond_to do |format|
+		respond_to do |format|
 	    format.html
-	    format.csv { send_data @surveys.to_csv }
+	    format.csv { send_data Survey.to_csv }
 	    format.xls { send_data @surveys.to_csv(col_sep: "\t") }
 	    end  
 	end

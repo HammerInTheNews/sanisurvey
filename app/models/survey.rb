@@ -10,13 +10,33 @@ class Survey < ActiveRecord::Base
     secret_access_key: "rNOv8qGFi9+xbq4pvdVoGOdqzpyt+lDkQUXclC54",
     bucket: "surveymax"} 
 
+
+
+
+  # def self.to_csv(options = {})
+    	# CSV.generate(options) do |csv|
+    	# 	csv << column_names
+    	# 	all.each do |survey|
+    	# 		csv << survey.attributes.values_at(*column_names)
+    	# 	end
+    	# end
+  # end		
+
+
   def self.to_csv(options = {})
-  	CSV.generate(options) do |csv|
-  		csv << column_names
-  		all.each do |survey|
-  			csv << survey.attributes.values_at(*column_names)
-  		end
-  	end
-  end		
+    #s = Survey.find(:all, :joins => :customer, :select => ['surveys.id', :customer_id, :restaurant_name])
+    s = Survey.find(:all, :joins => :customer, :select => 'customer_number, restaurant_name, city, surveys.*')
+
+    columns_headings = ["customer_number", "restaurant_name", "city"] + Survey.column_names
+    #columns_headings = columns_headings - ['customer_id']
+
+    CSV.generate(options) do |csv|
+      csv << columns_headings
+      s.each do |survey|
+        csv << survey.attributes.values_at(*columns_headings)
+      end
+    end
+  end
+
 
 end
